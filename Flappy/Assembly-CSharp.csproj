@@ -62,6 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CreatePipes.cs" />
+    <Compile Include="Assets\Scripts\DeletePipes.cs" />
+    <Compile Include="Assets\Scripts\Movecamera.cs" />
+    <Compile Include="Assets\Scripts\RefreshGround.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Erans/dit/Flappy/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

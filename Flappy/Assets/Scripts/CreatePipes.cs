@@ -14,7 +14,7 @@ public class CreatePipes : MonoBehaviour
     void Start ()
     {
         t = Time.time;
-        x = 6;
+        x = 5;
 
         i = 0;
         
@@ -28,7 +28,7 @@ public class CreatePipes : MonoBehaviour
     {
         float y;
         
-        y = UnityEngine.Random.Range(2, 12);
+        y = UnityEngine.Random.Range(3, 12);
         CurrentTime = Time.time;
         if(CurrentTime - t >= 5)
         {
@@ -36,7 +36,7 @@ public class CreatePipes : MonoBehaviour
             GameObject select = GameObject.Find("Original");
             GameObject Pipes=Transform.Instantiate(select,Pipe.transform.position=new Vector3(x, y, 0),transform.rotation);
             i++;
-            Pipes.name = " "+i;
+            Pipes.name = "p"+i;
             t = Time.time;
 
         }

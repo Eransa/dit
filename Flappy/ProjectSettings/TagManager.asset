@@ -14,7 +14,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Background
   - 
   - 
   - 
@@ -44,6 +44,9 @@ TagManager:
     locked: 0
   - name: Pipe
     uniqueID: 2455857105
+    locked: 0
+  - name: Score
+    uniqueID: 968469365
     locked: 0
   - name: Ground
     uniqueID: 3490272899
