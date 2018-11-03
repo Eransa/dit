@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Original
+  - Pipe
+  - Button
   layers:
   - Default
   - TransparentFX
@@ -14,9 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - Background
-  - 
-  - 
+  - Bird
+  - Flyer
+  - Button
   - 
   - 
   - 
@@ -42,12 +43,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 26177235
+    locked: 0
   - name: Pipe
     uniqueID: 2455857105
+    locked: 0
+  - name: Bird
+    uniqueID: 3356771973
     locked: 0
   - name: Score
     uniqueID: 968469365
     locked: 0
   - name: Ground
     uniqueID: 3490272899
+    locked: 0
+  - name: UI
+    uniqueID: 305856377
     locked: 0
