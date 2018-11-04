@@ -71,8 +71,8 @@ public class FlyBird : MonoBehaviour {
         }
         if (Input.GetMouseButtonDown(0) && GameManager.state != GameManager.State.End)
         {
-            
-            Bird.AddForce(new Vector2(0.0f, 10.0f),ForceMode2D.Impulse);
+            Bird.velocity += new Vector2(0.0f, 10.0f);
+            //Bird.AddForce(new Vector2(0.0f, 7.0f),ForceMode2D.Impulse);
             wing.PlayOneShot(Wing);
         }
         if (GameManager.state == GameManager.State.End)

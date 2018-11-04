@@ -41,6 +41,45 @@ public class ScoreBoard : MonoBehaviour {
             Score[1].GetComponent<SpriteRenderer>().sprite = ScorePic[dit10];
 
         }
+        else if (input == 100)
+        {
+            Score[2].SetActive(true);
+            Score[0].GetComponent<SpriteRenderer>().sprite = ScorePic[0];
+            Score[1].GetComponent<SpriteRenderer>().sprite = ScorePic[0];
+            Score[2].GetComponent<SpriteRenderer>().sprite = ScorePic[1];
+
+        }
+        else if (input <= 999)
+        {
+            int dit1, dit10, dit100;
+            dit100 = input / 100;
+            dit10 = input / 10 - (dit100 * 10);
+            dit1 = input % 10;
+            Score[0].GetComponent<SpriteRenderer>().sprite = ScorePic[dit1];
+            Score[1].GetComponent<SpriteRenderer>().sprite = ScorePic[dit10];
+            Score[2].GetComponent<SpriteRenderer>().sprite = ScorePic[dit100];
+        }
+        else if (input == 1000)
+        {
+            Score[3].SetActive(true);
+            Score[0].GetComponent<SpriteRenderer>().sprite = ScorePic[0];
+            Score[1].GetComponent<SpriteRenderer>().sprite = ScorePic[0];
+            Score[2].GetComponent<SpriteRenderer>().sprite = ScorePic[0];
+            Score[3].GetComponent<SpriteRenderer>().sprite = ScorePic[1];
+        }
+        else
+        {
+            int dit1, dit10, dit100, dit1000;
+            dit1000 = input / 1000;
+            dit100 = input / 100 - (dit1000 * 10);
+            dit1 = input % 10;
+            dit10 = (input % 10 - dit1) / 10;
+            Score[0].GetComponent<SpriteRenderer>().sprite = ScorePic[dit1];
+            Score[1].GetComponent<SpriteRenderer>().sprite = ScorePic[dit10];
+            Score[2].GetComponent<SpriteRenderer>().sprite = ScorePic[dit100];
+            Score[3].GetComponent<SpriteRenderer>().sprite = ScorePic[dit1000];
+        }
+
     }
 
     public int ScoreUp(GameObject[] Score,int score,int i)
@@ -57,20 +96,21 @@ public class ScoreBoard : MonoBehaviour {
     {
         int num;
         bool exist;
-        exist = System.IO.File.Exists(@"C:\Users\Erans\dit\Flappy\BestScore.txt");
+        exist = System.IO.File.Exists(@"C:\\Users\\Erans\\dit\\Flappy\\BestScore.txt");
         if (!exist)
         {
             num = 0;
         }
         else
         {
-            num = System.BitConverter.ToInt32(System.IO.File.ReadAllBytes(@"C:\Users\Erans\dit\Flappy\BestScore.txt"),0);
+            num = System.BitConverter.ToInt32(System.IO.File.ReadAllBytes(@"C:\\Users\\Erans\\dit\\Flappy\\BestScore.txt"),0);
         }
         return num;
     }
 
     public void Write(int num)
     {
+        Debug.Log("success");
         byte[] bestscore = System.BitConverter.GetBytes(num);
         bool exist;
         exist = System.IO.File.Exists(@"C:\Users\Erans\dit\Flappy\BestScore.txt");
@@ -109,11 +149,7 @@ public class ScoreBoard : MonoBehaviour {
             {
                 New.SetActive(true);
                 loaded=ScoreUp(BestScore, GameManager.score, loaded);
-                if (GameManager.score == loaded - 1)
-                {
-                    loaded = GameManager.score;
-                    Write(loaded);
-                }
+                Write(loaded);
             }
             switch (GameManager.score / 10)
             {
